@@ -1,3 +1,37 @@
+Update 2013-01-21 Patch
+=======================
+
+Hi, I've created a patch to accomplish the goals of this test.
+1. All JS has been converted or created to be using RequireJS
+
+2. On the homepage, we have a link to load the conditions of aneurysms, which is set by a new module, router.js
+    * The link is created as /#/slug/ which will become /#/aneurysm/
+    * A the bottom of the page, there's a link to return to the homepage
+
+3. The Aneurysm page is created using the template, condition.hbs.
+
+4. The view for the Aneurysm page lists all the treatments, as a descriptions list.
+
+Extra Add-Ons
+-------------
+
+* Styling is done in LESS, and is minified when compiled.
+
+* Markup in templates will generate semantically-outlined HTML5
+
+Remarks
+-------
+
+This project was fun and interesting, but I found that the best part of it was the challenge. The goals that were set are typical of a Backbone project - and essentially any webapp project - so it presented situations that one would encounter commonly, though not all at once. The challenge, I found, was making sure that what was required for each module was in place in order to be using AMD patterns.
+
+To solve this problem, I had to break down the project in granular steps, instead of trying to tackle it all at once.
+
+First, I created the model, view, and router, and then re-wrote them as modules. (I assume going forward, I'll be jumping straight into the latter step.) Second, I created the templates as a very basic output with little html or template logic. Third, after confirming that everything was working, I applied stylesheets to improved templates.
+
+Were I to revisit this project, my first goal would be to make the views be presentable on a mobile device. The stylesheets are all written using EM values, so there is a bit of a head start. Once it is presentable, I would like to look into creating scripts to add user interactivity, such as swiping from treatment to treatment, or collapsible options.
+
+
+
 WiserTogether Backbone Test
 ===========================
 
