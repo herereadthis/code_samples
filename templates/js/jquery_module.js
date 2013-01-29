@@ -2,15 +2,18 @@
 (function() {
 
   define(function(require) {
-    var $, em, exports, gVars, myFunction;
+    var $, exports, gVars, myFunction, px;
     $ = require("jquery");
     exports = {};
     gVars = {};
-    em = parseInt($("body").css("font-size"), 10);
+    px = parseInt($("body").css("font-size"), 10);
     myFunction = function(vars) {
       console.log("passed variable: " + vars);
       console.log("set a global object literal gVars with init, " + gVars.myVar);
-      return console.log("if I define something outside of functions,\nI can call on it,such as body's font-size: " + em + "em");
+      return console.log("if I define something outside of functions,\nI can call on it,such as body's font-size: " + px + "px");
+    };
+    exports.myMethod = function(element) {
+      return console.log("some other module is using me!");
     };
     exports.init = function(element) {
       var settings;
@@ -19,7 +22,7 @@
         var2: "bar"
       };
       gVars.myVar = "foobar";
-      console.log("resize_fu init!");
+      console.log("myFunction init!");
       return myFunction(settings.var1);
     };
     return exports;
